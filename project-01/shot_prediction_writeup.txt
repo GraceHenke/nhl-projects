@@ -1,0 +1,16 @@
+Hockey Shot Prediction and Visualization (2024 Season)
+
+This project analyzes NHL shot data to explore patterns and predict goal probabilities using logistic regression. The dataset, obtained from MoneyPuck, includes all recorded shots from the 2024 season.
+The workflow involves:
+Data Collection: Automatically downloading and caching season shot data.
+Visualization: Building rink scatterplots and heatmaps to visualize both actual and predicted shot outcomes.
+Modeling: Training a logistic regression model using shot coordinates (xCordAdjusted, yCordAdjusted) to predict the likelihood of a goal.
+
+After training, the model achieved:
+Accuracy: 0.5425
+AUC: 0.6522
+Coefficients: [0.0284 (x-position), -0.00083 (y-position)]
+
+These results suggest that shot distance from the net (x-coordinate) plays a stronger role in predicting goals than the lateral position (y-coordinate). The generated heatmap and shot plot illustrate regions of higher predicted goal probabilities across the rink surface.
+Limitations:
+While the model provides a useful visualization of goal likelihood by location, it is constrained by the simplicity of its feature set. Real-world goal probability depends on many additional factors — such as shot type, game situation, player skill, defensive pressure, and goalie position — which are not captured here. As a result, the predictions should be viewed as a basic spatial probability model rather than a fully comprehensive performance predictor.
